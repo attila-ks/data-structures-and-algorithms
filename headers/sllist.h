@@ -55,6 +55,6 @@ void sllistPushBack(SLList *const restrict list,
                     const Item *const restrict item);
 
 // Remove elements fulfilling condition
-void sllistRemove(SLList *const restrict list, func predicate);
+void sllistRemoveIf(SLList *const restrict list, func predicate);
 
 #endif // SLLIST_H

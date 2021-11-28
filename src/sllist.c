@@ -187,7 +187,7 @@ void sllistPushBack(SLList *const restrict list,
 // TODO: Can it be more efficient? Because it creates a new SLList and items
 // are copied to the new list. Maybe implement and use
 // std::forward_list::erase_after -like function.
-void sllistRemove(SLList *const restrict list, func predicate)
+void sllistRemoveIf(SLList *const restrict list, func predicate)
 {
   SLList newList = sllistConstruct(0);
   struct Node *current = list->first;

@@ -19,6 +19,6 @@ static void TestSllistPushFront(void);
 static void TestSllistPopFront(void);
 static void TestSllistPushBack(void);
 
-static void TestSllistRemove(void);
+static void TestSllistRemoveIf(void);
 
 #endif // SLLISTTEST_H

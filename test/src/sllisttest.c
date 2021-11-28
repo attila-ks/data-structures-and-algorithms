@@ -28,7 +28,7 @@ void runSllistTestCase(void)
   TestSllistPopFront();
   TestSllistPushBack();
 
-  TestSllistRemove();
+  TestSllistRemoveIf();
 
   puts("- Single Linked List test case ran without any error!");
 }
@@ -370,11 +370,11 @@ void TestSllistPushBack(void)
   );
 }
 
-void TestSllistRemove(void)
+void TestSllistRemoveIf(void)
 {
-  // Test func sllistRemove with empty SLList
+  // Test func sllistRemoveIf with empty SLList
   SLList list = sllistConstruct(0);
-  sllistRemove(&list, predicate);
+  sllistRemoveIf(&list, predicate);
   assert
   (
     list.first == NULL &&
@@ -383,9 +383,9 @@ void TestSllistRemove(void)
     list.operationCounter == 0
   );
 
-  // Test func sllistRemove with no Item to remove in one-Item SLList
+  // Test func sllistRemoveIf with no Item to remove in one-Item SLList
   list = sllistConstruct(1, 5);
-  sllistRemove(&list, predicate);
+  sllistRemoveIf(&list, predicate);
   assert
   (
     list.first->item == 5 &&
@@ -397,9 +397,9 @@ void TestSllistRemove(void)
 
   sllistDestruct(&list);
 
-  // Test func sllistRemove with one Item to remove in one-Item SLList
+  // Test func sllistRemoveIf with one Item to remove in one-Item SLList
   list = sllistConstruct(1, itemToRemove);
-  sllistRemove(&list, predicate);
+  sllistRemoveIf(&list, predicate);
   assert
   (
     list.first == NULL &&
@@ -408,10 +408,10 @@ void TestSllistRemove(void)
     list.operationCounter == 2
   );
 
-  // Test func sllistRemove with one Item to remove from beginning of a
+  // Test func sllistRemoveIf with one Item to remove from beginning of a
   // two-Items SLList
   list = sllistConstruct(2, itemToRemove, 4);
-  sllistRemove(&list, predicate);
+  sllistRemoveIf(&list, predicate);
   assert
   (
     list.first->item == 4 &&
@@ -423,10 +423,10 @@ void TestSllistRemove(void)
 
   sllistDestruct(&list);
 
-  // Test func sllistRemove with one Item to remove from end of a two-Items
+  // Test func sllistRemoveIf with one Item to remove from end of a two-Items
   // SLList
   list = sllistConstruct(2, 4, itemToRemove);
-  sllistRemove(&list, predicate);
+  sllistRemoveIf(&list, predicate);
   assert
   (
     list.first->item == 4 &&
@@ -441,7 +441,7 @@ void TestSllistRemove(void)
   // Test func sllistRemmove with more Items to remove from SLList
   list = sllistConstruct(9, itemToRemove, 0, 1, itemToRemove, 2, 4, 5,
                          itemToRemove, itemToRemove);
-  sllistRemove(&list, predicate);
+  sllistRemoveIf(&list, predicate);
 
   const Item remainingItems[] = {0, 1, 2, 4, 5};
   const int arraySize = 5;
