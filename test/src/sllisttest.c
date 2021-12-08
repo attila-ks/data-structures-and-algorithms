@@ -172,8 +172,8 @@ void TestSllistFirst(void)
   assert
   (
     list.first == itr.current &&
-    &(list.operationCounter) == itr.sllistOperationCounterPtr &&
-    list.operationCounter == itr.currentSllistOperationCounter
+    &(list.operationCounter) == itr.operationCounterPtr &&
+    list.operationCounter == itr.currentOperationCounter
   );
 }
 
@@ -185,8 +185,8 @@ void TestSllistLast(void)
   assert
   (
     list.last == itr.current &&
-    &(list.operationCounter) == itr.sllistOperationCounterPtr &&
-    list.operationCounter == itr.currentSllistOperationCounter
+    &(list.operationCounter) == itr.operationCounterPtr &&
+    list.operationCounter == itr.currentOperationCounter
   );
 }
 

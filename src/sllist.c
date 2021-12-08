@@ -80,7 +80,7 @@ bool sllistHasNext(const Iterator *const restrict itr)
 {
   assert
   (
-    *(itr->sllistOperationCounterPtr) == itr->currentSllistOperationCounter
+    *(itr->operationCounterPtr) == itr->currentOperationCounter
   );
 
   return itr->current != NULL;
@@ -91,7 +91,7 @@ Item *sllistNext(Iterator *const restrict itr)
 {
   assert
   (
-    *(itr->sllistOperationCounterPtr) == itr->currentSllistOperationCounter
+    *(itr->operationCounterPtr) == itr->currentOperationCounter
   );
 
   Item *item = &(itr->current->item);
