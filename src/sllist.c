@@ -14,7 +14,7 @@ SLList sllistConstruct(int n, ...)
 
   for (int i = 0; i < n; ++i)
   {
-    Item item = va_arg(initList, int);
+    Item item = va_arg(initList, Item);
     sllistPushBack(&list, &item);
   }
 
@@ -91,7 +91,8 @@ Item *sllistNext(Iterator *const restrict itr)
 {
   assert
   (
-    *(itr->operationCounterPtr) == itr->currentOperationCounter
+    *(itr->operationCounterPtr) == itr->currentOperationCounter &&
+    itr->current != NULL
   );
 
   Item *item = &(itr->current->item);
@@ -145,14 +146,13 @@ Item sllistPopFront(SLList *const restrict list)
   Item item = oldFirst->item;
   free(oldFirst);
 
+  --list->size;
+  ++list->operationCounter;
 
-  if (list->size == 1)
+  if (list->size == 0)
   {
     list->last = NULL;
   }
-
-  --list->size;
-  ++list->operationCounter;
 
   return item;
 }
