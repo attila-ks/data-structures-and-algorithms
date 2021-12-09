@@ -64,6 +64,8 @@ void TestSllistConstruct(void)
     list.size == 5 &&
     list.operationCounter == 5
   );
+
+  sllistDestruct(&list);
 }
 
 
@@ -90,6 +92,8 @@ void TestSllistDestruct(void)
     list.size == 0 &&
     list.operationCounter == 0
   );
+
+  sllistDestruct(&list);
 }
 
 
@@ -157,6 +161,9 @@ void TestSllistCopy(void)
     dest.size == 5 &&
     dest.operationCounter == 5
   );
+
+  sllistDestruct(&dest);
+  sllistDestruct(&src);
 }
 
 
@@ -204,6 +211,8 @@ void TestSllistHasNext(void)
     sllistNext(&itr1);
   }
   assert(sllistHasNext(&itr1) == false);
+
+  sllistDestruct(&list);
 }
 
 
@@ -222,6 +231,8 @@ void TestSllistNext(void)
     assert(item != NULL && *item == i);
   }
   // TODO: Test whether itr points to NULL
+
+  sllistDestruct(&list);
 }
 
 
@@ -234,6 +245,8 @@ void TestSllistIsEmpty(void)
   // Test func sllistIsEmpty with not empty SLList
   list = sllistConstruct(5, 0, 1, 2, 3, 4);
   assert(sllistIsEmpty(&list) == false);
+
+  sllistDestruct(&list);
 }
 
 
@@ -246,6 +259,8 @@ void TestSllistSize(void)
   // Test func sllistSize with not empty SLList
   list = sllistConstruct(5, 0, 1, 2, 3, 4);
   assert(sllistSize(&list) == 5);
+
+  sllistDestruct(&list);
 }
 
 
@@ -274,6 +289,8 @@ void TestSllistPushFront(void)
     list.size == 2 &&
     list.operationCounter == 2
   );
+
+  sllistDestruct(&list);
 }
 
 
@@ -292,6 +309,8 @@ void TestSllistPopFront(void)
     item == 5 &&
     list.operationCounter == 2
   );
+
+  sllistDestruct(&list);
 
   // Test func sllistPopFront with two-Items SLList
   list = sllistConstruct(2, 0, 1);
@@ -321,6 +340,8 @@ void TestSllistPopFront(void)
     list.operationCounter == 4 &&
     item == 0
   );
+
+  sllistDestruct(&list);
 }
 
 void TestSllistPushBack(void)
@@ -350,6 +371,8 @@ void TestSllistPushBack(void)
     list.operationCounter == 2
   );
 
+  sllistDestruct(&list);
+
   // Test func sllistPushBack with two-Items SLList
   list = sllistConstruct(2, 0, 1);
   sllistPushBack(&list, &((Item){2}));
@@ -363,6 +386,8 @@ void TestSllistPushBack(void)
     list.size == 3 &&
     list.operationCounter == 3
   );
+
+  sllistDestruct(&list);
 }
 
 void TestSllistRemoveIf(void)
@@ -402,6 +427,8 @@ void TestSllistRemoveIf(void)
     list.size == 0 &&
     list.operationCounter == 2
   );
+
+  sllistDestruct(&list);
 
   // Test func sllistRemoveIf with one Item to remove from beginning of a
   // two-Items SLList
@@ -449,6 +476,8 @@ void TestSllistRemoveIf(void)
     current = current->next;
   }
   assert(current == NULL && list.size == arraySize);
+
+  sllistDestruct(&list);
 }
 
 
