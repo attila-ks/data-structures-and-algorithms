@@ -22,9 +22,9 @@ typedef struct ForwardIterator
 {
   struct Node *current;
   // Points to the operationCounter field of a SLList
-  const int *const operationCounterPtr;
+  int *operationCounterPtr;
   // Used for comparison with operationCounterPtr field
-  const int currentOperationCounter;
+  int currentOperationCounter;
 } Iterator;
 
 
