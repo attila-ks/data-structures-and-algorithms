@@ -41,6 +41,8 @@ void sllistCopy(SLList *const dest, const SLList *const src);
 Iterator sllistFirst(SLList *const restrict list);
 Iterator sllistLast(SLList *const restrict list);
 bool sllistHasNext(const Iterator *const restrict itr);
+// Returns a pointer to the next Item. Function sllistHasNext should be tested
+// before calling this function.
 Item *sllistNext(Iterator *const restrict itr);
 
 bool sllistIsEmpty(const SLList *const restrict list);
@@ -48,8 +50,8 @@ int sllistSize(const SLList *const restrict list);
 
 void sllistPushFront(SLList *const restrict list,
                      const Item *const restrict item);
-// Returns the popped item from the beginning of the SLList. list's size should
-// be tested before calling the function.
+// Returns the popped Item from the beginning of the SLList. list's size should
+// be tested before calling this function.
 Item sllistPopFront(SLList *const restrict list);
 void sllistPushBack(SLList *const restrict list,
                     const Item *const restrict item);

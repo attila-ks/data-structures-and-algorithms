@@ -96,7 +96,6 @@ Item *sllistNext(Iterator *const restrict itr)
 
   Item *item = &(itr->current->item);
   itr->current = itr->current->next;
-  // TODO: Should it return NULL if itr points to NULL?
   return item;
 }
 
