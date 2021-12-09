@@ -30,7 +30,7 @@ void runSllistTestCase(void)
 
   TestSllistRemoveIf();
 
-  puts("- Single Linked List test case ran without any error!");
+  puts("- Singly Linked List test case ran without any error!");
 }
 
 
@@ -49,8 +49,6 @@ void TestSllistConstruct(void)
     list.operationCounter == 0
   );
 
-  sllistDestruct(&list);
-
   // Test not empty SLList construction
   list = sllistConstruct(5, 0, 1, 2, 3, 4);
   const struct Node *current = list.first;
@@ -63,7 +61,6 @@ void TestSllistConstruct(void)
   assert
   (
     list.last->item == 4 &&
-    list.last->next == NULL &&
     list.size == 5 &&
     list.operationCounter == 5
   );
@@ -136,7 +133,6 @@ void TestSllistCopy(void)
   assert
   (
     dest.last->item == 4 &&
-    dest.last->next == NULL &&
     dest.size == 5 &&
     dest.operationCounter == 5
   );
@@ -158,7 +154,6 @@ void TestSllistCopy(void)
   assert
   (
     dest.last->item == 4 &&
-    dest.last->next == NULL &&
     dest.size == 5 &&
     dest.operationCounter == 5
   );
