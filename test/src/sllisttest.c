@@ -203,14 +203,15 @@ void TestSllistHasNext(void)
   assert(sllistHasNext(&itr) == false);
 
   // Test func sllistHasNext with not empty SLList
-  list = sllistConstruct(3, 0, 1, 2);
-  Iterator itr1 = sllistFirst(&list);
-  for (int i = 0; i < list.size; ++i)
+  list = sllistConstruct(5, 0, 1, 2, 3, 4);
+  itr = sllistFirst(&list);
+  int i = 0;
+  while (sllistHasNext(&itr))
   {
-    assert(sllistHasNext(&itr1) == true);
-    sllistNext(&itr1);
+    sllistNext(&itr);
+    ++i;
   }
-  assert(sllistHasNext(&itr1) == false);
+  assert(i == 5);
 
   sllistDestruct(&list);
 }
