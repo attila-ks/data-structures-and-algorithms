@@ -4,10 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-const Item itemToRemove = 3;
+static const Item itemToRemove = 3;
 
 // Helper functions
-bool predicate(const Item *const restrict item);
+static bool predicate(const Item *const restrict item);
 
 
 void runSllistTestCase(void)
