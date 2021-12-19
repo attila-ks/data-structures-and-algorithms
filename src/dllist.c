@@ -30,7 +30,7 @@ void dllistDestruct(DLList *const restrict list)
   {
     list->first = list->first->next;
     free(current);
-    current = current->next;
+    current = list->first;
   }
 
   list->last = NULL;

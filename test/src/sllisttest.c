@@ -225,10 +225,9 @@ void TestSllistNext(void)
   // Test func sllistNext with not empty SLList
   SLList list = sllistConstruct(3, 0, 1, 2);
   Iterator itr = sllistFirst(&list);
-  Item *item;
   for (int i = 0; i < list.size; ++i)
   {
-    item = sllistNext(&itr);
+    const Item *const item = sllistNext(&itr);
     assert(item != NULL && *item == i);
   }
   // TODO: Test whether itr points to NULL
