@@ -193,6 +193,30 @@ void TestDllistLast(void)
 }
 
 
+void TestDllistHasPrevious(void)
+{
+  // TODO: Test the iterator's fail-fast functionality
+
+  // Test func dllistHasPrevious with empty DLList
+  DLList list = dllistConstruct(0);
+  Iterator itr = dllistFirst(&list);
+  assert(dllistHasPrevious(&itr) == false);
+
+  // Test func dllistHasPrevious with not empty DLList
+  list = dllistConstruct(5, 0, 1, 2, 3, 4);
+  itr = dllistLast(&list);
+  int i = 0;
+  while (dllistHasPrevious(&itr))
+  {
+    dllistPrevious(&itr);
+    ++i;
+  }
+  assert(i == 5);
+
+  dllistDestruct(&list);
+}
+
+
 void TestDllistHasNext(void)
 {
   // TODO: Test the iterator's fail-fast functionality
@@ -212,6 +236,24 @@ void TestDllistHasNext(void)
     ++i;
   }
   assert(i == list.size);
+
+  dllistDestruct(&list);
+}
+
+
+void TestDllistPrevious(void)
+{
+  // TODO: Test the iterator's fail-fast functionality
+  // TODO: Test func dllistPrevious with empty DLList
+
+  // Test func dllistPrevious with not empty DLList
+  DLList list = dllistConstruct(5, 0, 1, 2, 3, 4);
+  Iterator itr = dllistLast(&list);
+  for (int i = 4; i >= 0; --i)
+  {
+    const Item *const item = dllistPrevious(&itr);
+    assert(*item == i);
+  }
 
   dllistDestruct(&list);
 }

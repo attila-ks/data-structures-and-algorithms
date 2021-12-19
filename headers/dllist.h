@@ -40,7 +40,11 @@ void dllistCopy(DLList *const dest, const DLList *const src);
 // should be called on DLList while using the iterator.
 Iterator dllistFirst(DLList *const restrict list);
 Iterator dllistLast(DLList *const restrict list);
+bool dllistHasPrevious(const Iterator *const restrict itr);
 bool dllistHasNext(const Iterator *const restrict itr);
+// Returns a pointer to the previous Item. Function dllistHasPrevious should be
+// tested before calling this function.
+Item *dllistPrevious(Iterator *const restrict itr);
 // Returns a pointer to the next Item. Function dllistHasNext should be tested
 // before calling this function.
 Item *dllistNext(Iterator *const restrict itr);

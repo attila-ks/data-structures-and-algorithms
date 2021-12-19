@@ -9,7 +9,9 @@ static void TestDllistCopy(void);
 
 static void TestDllistFirst(void);
 static void TestDllistLast(void);
+static void TestDllistHasPrevious(void);
 static void TestDllistHasNext(void);
+static void TestDllistPrevious(void);
 static void TestDllistNext(void);
 
 static void TestDllistIsEmpty(void);

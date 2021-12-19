@@ -74,6 +74,12 @@ Iterator dllistLast(DLList *const restrict list)
 }
 
 
+bool dllistHasPrevious(const Iterator *const restrict itr)
+{
+  return dllistHasNext(itr);
+}
+
+
 bool dllistHasNext(const Iterator *const restrict itr)
 {
   assert
@@ -82,6 +88,19 @@ bool dllistHasNext(const Iterator *const restrict itr)
   );
 
   return itr->current != NULL;
+}
+
+
+Item *dllistPrevious(Iterator *const restrict itr)
+{
+  assert
+  (
+    itr->list->operationCounter == itr->currentOperationCounter
+  );
+
+  Item *item = &(itr->current->item);
+  itr->current = itr->current->prev;
+  return item;
 }
 
 
