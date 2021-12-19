@@ -221,12 +221,12 @@ void TestDllistHasNext(void)
 {
   // TODO: Test the iterator's fail-fast functionality
 
-  // Test func dllistFirst with empty DLList
+  // Test func dllistHasNext with empty DLList
   DLList list = dllistConstruct(0);
   Iterator itr = dllistFirst(&list);
   assert(dllistHasNext(&itr) == false);
 
-  // Test func dllistFirst with not empty DLList
+  // Test func dllistHasNext with not empty DLList
   list = dllistConstruct(5, 0, 1, 2, 3, 4);
   itr = dllistFirst(&list);
   int i = 0;
