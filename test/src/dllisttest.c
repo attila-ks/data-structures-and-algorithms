@@ -11,32 +11,32 @@ static bool predicate(const Item *const restrict item);
 
 void runDllistTestCase(void)
 {
-  TestDllistConstruct();
-  TestDllistDestruct();
-  TestDllistCopy();
+  testDllistConstruct();
+  testDllistDestruct();
+  testDllistCopy();
 
-  TestDllistFirst();
-  TestDllistLast();
-  TestDllistHasNext();
-  TestDllistNext();
+  testDllistFirst();
+  testDllistLast();
+  testDllistHasNext();
+  testDllistNext();
 
-  TestDllistIsEmpty();
-  TestDllistSize();
+  testDllistIsEmpty();
+  testDllistSize();
 
-  TestDllistPushFront();
-  TestDllistPopFront();
-  TestDllistPushBack();
-  TestDllistPopBack();
-  TestDllistInsert();
-  TestDllistErase();
+  testDllistPushFront();
+  testDllistPopFront();
+  testDllistPushBack();
+  testDllistPopBack();
+  testDllistInsert();
+  testDllistErase();
 
-  TestDllistRemoveIf();
+  testDllistRemoveIf();
 
   puts("- Doubly Linked List test case ran without any error!");
 }
 
 
-void TestDllistConstruct(void)
+void testDllistConstruct(void)
 {
   // TODO: Test dllistConstruct with negative argument!
   // TODO: Test dllistConstruct with different number of items than ellipsis!
@@ -72,7 +72,7 @@ void TestDllistConstruct(void)
 }
 
 
-void TestDllistDestruct(void)
+void testDllistDestruct(void)
 {
   // Test func dllistDestruct with empty DLList destruction
   DLList list = dllistConstruct(0);
@@ -97,7 +97,7 @@ void TestDllistDestruct(void)
   );
 }
 
-void TestDllistCopy(void)
+void testDllistCopy(void)
 {
   // TODO: Should be tested if the source DLList is modified?
 
@@ -165,7 +165,7 @@ void TestDllistCopy(void)
 }
 
 
-void TestDllistFirst(void)
+void testDllistFirst(void)
 {
   // Test func dllistFirst with empty DLList
   DLList list = dllistConstruct(0);
@@ -179,7 +179,7 @@ void TestDllistFirst(void)
 }
 
 
-void TestDllistLast(void)
+void testDllistLast(void)
 {
   // Test func dllistFirst with empty DLList
   DLList list = dllistConstruct(0);
@@ -193,7 +193,7 @@ void TestDllistLast(void)
 }
 
 
-void TestDllistHasPrevious(void)
+void testDllistHasPrevious(void)
 {
   // TODO: Test the iterator's fail-fast functionality
 
@@ -217,7 +217,7 @@ void TestDllistHasPrevious(void)
 }
 
 
-void TestDllistHasNext(void)
+void testDllistHasNext(void)
 {
   // TODO: Test the iterator's fail-fast functionality
 
@@ -241,7 +241,7 @@ void TestDllistHasNext(void)
 }
 
 
-void TestDllistPrevious(void)
+void testDllistPrevious(void)
 {
   // TODO: Test the iterator's fail-fast functionality
   // TODO: Test func dllistPrevious with empty DLList
@@ -259,7 +259,7 @@ void TestDllistPrevious(void)
 }
 
 
-void TestDllistNext(void)
+void testDllistNext(void)
 {
   // TODO: Test the iterator's fail-fast functionality
   // TODO: Test func dllistNext with empty DLList
@@ -277,7 +277,7 @@ void TestDllistNext(void)
 }
 
 
-void TestDllistIsEmpty(void)
+void testDllistIsEmpty(void)
 {
   // Test func dllistIsEmpty with empty DLList
   DLList list = dllistConstruct(0);
@@ -291,7 +291,7 @@ void TestDllistIsEmpty(void)
 }
 
 
-void TestDllistSize(void)
+void testDllistSize(void)
 {
   // Test func dllistSize with empty DLList
   DLList list = dllistConstruct(0);
@@ -305,7 +305,7 @@ void TestDllistSize(void)
 }
 
 
-void TestDllistPushFront(void)
+void testDllistPushFront(void)
 {
   // Test func dllistPushFront with empty DLList
   DLList list = dllistConstruct(0);
@@ -337,7 +337,7 @@ void TestDllistPushFront(void)
 }
 
 
-void TestDllistPopFront(void)
+void testDllistPopFront(void)
 {
   // TODO: Test func dllistPopFront with empty DLList
 
@@ -390,7 +390,7 @@ void TestDllistPopFront(void)
 }
 
 
-void TestDllistPushBack(void)
+void testDllistPushBack(void)
 {
   // Test func dllistPushBack with empty DLList
   DLList list = dllistConstruct(0);
@@ -439,7 +439,7 @@ void TestDllistPushBack(void)
 }
 
 
-void TestDllistPopBack(void)
+void testDllistPopBack(void)
 {
     // TODO: Test func dllistPopBack with empty DLList
 
@@ -491,7 +491,7 @@ void TestDllistPopBack(void)
 }
 
 
-void TestDllistInsert(void)
+void testDllistInsert(void)
 {
   // Test func dllistInsert with empty DLList
   DLList list = dllistConstruct(0);
@@ -546,7 +546,7 @@ void TestDllistInsert(void)
 }
 
 
-void TestDllistErase(void)
+void testDllistErase(void)
 {
   // TODO: Test func dllistErase with empty DLList
 
@@ -629,7 +629,7 @@ void TestDllistErase(void)
 }
 
 
-void TestDllistRemoveIf(void)
+void testDllistRemoveIf(void)
 {
   // Test func dllistRemoveIf with empty DLList
   DLList list = dllistConstruct(0);

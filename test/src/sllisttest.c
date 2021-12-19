@@ -12,29 +12,29 @@ static bool predicate(const Item *const restrict item);
 
 void runSllistTestCase(void)
 {
-  TestSllistConstruct();
-  TestSllistDestruct();
-  TestSllistCopy();
+  testSllistConstruct();
+  testSllistDestruct();
+  testSllistCopy();
 
-  TestSllistFirst();
-  TestSllistLast();
-  TestSllistHasNext();
-  TestSllistNext();
+  testSllistFirst();
+  testSllistLast();
+  testSllistHasNext();
+  testSllistNext();
 
-  TestSllistIsEmpty();
-  TestSllistSize();
+  testSllistIsEmpty();
+  testSllistSize();
 
-  TestSllistPushFront();
-  TestSllistPopFront();
-  TestSllistPushBack();
+  testSllistPushFront();
+  testSllistPopFront();
+  testSllistPushBack();
 
-  TestSllistRemoveIf();
+  testSllistRemoveIf();
 
   puts("- Singly Linked List test case ran without any error!");
 }
 
 
-void TestSllistConstruct(void)
+void testSllistConstruct(void)
 {
   // TODO: Test sllistConstruct with negative argument!
   // TODO: Test sllistConstruct with different number of items than ellipsis!
@@ -69,7 +69,7 @@ void TestSllistConstruct(void)
 }
 
 
-void TestSllistDestruct(void)
+void testSllistDestruct(void)
 {
   // Test empty SLList destruction
   SLList list = sllistConstruct(0);
@@ -97,7 +97,7 @@ void TestSllistDestruct(void)
 }
 
 
-void TestSllistCopy(void)
+void testSllistCopy(void)
 {
   // Test empty SLList copy into other empty SLList
   SLList src = sllistConstruct(0);
@@ -167,7 +167,7 @@ void TestSllistCopy(void)
 }
 
 
-void TestSllistFirst(void)
+void testSllistFirst(void)
 {
   SLList list = sllistConstruct(0);
   const Iterator itr = sllistFirst(&list);
@@ -180,7 +180,7 @@ void TestSllistFirst(void)
 }
 
 
-void TestSllistLast(void)
+void testSllistLast(void)
 {
   SLList list = sllistConstruct(0);
   const Iterator itr = sllistLast(&list);
@@ -193,7 +193,7 @@ void TestSllistLast(void)
 }
 
 
-void TestSllistHasNext(void)
+void testSllistHasNext(void)
 {
   // TODO: Test the iterator's fail-fast functionality
 
@@ -217,7 +217,7 @@ void TestSllistHasNext(void)
 }
 
 
-void TestSllistNext(void)
+void testSllistNext(void)
 {
   // TODO: Test the iterator's fail-fast functionality
   // TODO: Test func sllistNext with empty SLList
@@ -236,7 +236,7 @@ void TestSllistNext(void)
 }
 
 
-void TestSllistIsEmpty(void)
+void testSllistIsEmpty(void)
 {
   // Test func sllistIsEmpty with empty SLList
   SLList list = sllistConstruct(0);
@@ -250,7 +250,7 @@ void TestSllistIsEmpty(void)
 }
 
 
-void TestSllistSize(void)
+void testSllistSize(void)
 {
   // Test func sllistSize with empty SLList
   SLList list = sllistConstruct(0);
@@ -264,7 +264,7 @@ void TestSllistSize(void)
 }
 
 
-void TestSllistPushFront(void)
+void testSllistPushFront(void)
 {
   // Test func sllistPushFront with empty SLList
   SLList list = sllistConstruct(0);
@@ -294,7 +294,7 @@ void TestSllistPushFront(void)
 }
 
 
-void TestSllistPopFront(void)
+void testSllistPopFront(void)
 {
   // TODO: Test func sllistPopFront with empty SLList
 
@@ -344,7 +344,7 @@ void TestSllistPopFront(void)
   sllistDestruct(&list);
 }
 
-void TestSllistPushBack(void)
+void testSllistPushBack(void)
 {
   // Test func sllistPushBack with empty SLList
   SLList list = sllistConstruct(0);
@@ -390,7 +390,7 @@ void TestSllistPushBack(void)
   sllistDestruct(&list);
 }
 
-void TestSllistRemoveIf(void)
+void testSllistRemoveIf(void)
 {
   // Test func sllistRemoveIf with empty SLList
   SLList list = sllistConstruct(0);

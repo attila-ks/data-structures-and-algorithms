@@ -3,22 +3,22 @@
 
 void runSllistTestCase(void);
 
-static void TestSllistConstruct(void);
-static void TestSllistDestruct(void);
-static void TestSllistCopy(void);
+static void testSllistConstruct(void);
+static void testSllistDestruct(void);
+static void testSllistCopy(void);
 
-static void TestSllistFirst(void);
-static void TestSllistLast(void);
-static void TestSllistHasNext(void);
-static void TestSllistNext(void);
+static void testSllistFirst(void);
+static void testSllistLast(void);
+static void testSllistHasNext(void);
+static void testSllistNext(void);
 
-static void TestSllistIsEmpty(void);
-static void TestSllistSize(void);
+static void testSllistIsEmpty(void);
+static void testSllistSize(void);
 
-static void TestSllistPushFront(void);
-static void TestSllistPopFront(void);
-static void TestSllistPushBack(void);
+static void testSllistPushFront(void);
+static void testSllistPopFront(void);
+static void testSllistPushBack(void);
 
-static void TestSllistRemoveIf(void);
+static void testSllistRemoveIf(void);
 
 #endif // SLLISTTEST_H

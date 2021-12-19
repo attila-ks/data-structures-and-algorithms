@@ -3,27 +3,27 @@
 
 void runDllistTestCase(void);
 
-static void TestDllistConstruct(void);
-static void TestDllistDestruct(void);
-static void TestDllistCopy(void);
+static void testDllistConstruct(void);
+static void testDllistDestruct(void);
+static void testDllistCopy(void);
 
-static void TestDllistFirst(void);
-static void TestDllistLast(void);
-static void TestDllistHasPrevious(void);
-static void TestDllistHasNext(void);
-static void TestDllistPrevious(void);
-static void TestDllistNext(void);
+static void testDllistFirst(void);
+static void testDllistLast(void);
+static void testDllistHasPrevious(void);
+static void testDllistHasNext(void);
+static void testDllistPrevious(void);
+static void testDllistNext(void);
 
-static void TestDllistIsEmpty(void);
-static void TestDllistSize(void);
+static void testDllistIsEmpty(void);
+static void testDllistSize(void);
 
-static void TestDllistPushFront(void);
-static void TestDllistPopFront(void);
-static void TestDllistPushBack(void);
-static void TestDllistPopBack(void);
-static void TestDllistInsert(void);
-static void TestDllistErase(void);
+static void testDllistPushFront(void);
+static void testDllistPopFront(void);
+static void testDllistPushBack(void);
+static void testDllistPopBack(void);
+static void testDllistInsert(void);
+static void testDllistErase(void);
 
-static void TestDllistRemoveIf(void);
+static void testDllistRemoveIf(void);
 
 #endif // DLLISTTEST_H
