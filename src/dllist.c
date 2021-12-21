@@ -132,22 +132,20 @@ int dllistSize(const DLList *const restrict list)
 void dllistPushFront(DLList *const restrict list,
                      const Item *const restrict item)
 {
+  struct Node *const oldFirst = list->first;
   // TODO: Test against memory allocation failure!
-  struct Node *const first = (struct Node *const)malloc(sizeof(struct Node));
-  first->item = *item;
-  first->prev = NULL;
+  list->first = (struct Node *const)malloc(sizeof(struct Node));
+  list->first->item = *item;
+  list->first->prev = NULL;
+  list->first->next = oldFirst;
 
   if (list->size == 0)
   {
-    first->next = NULL;
-    list->first = first;
-    list->last = first;
+    list->last = list->first;
   }
   else
   {
-    list->first->prev = first;
-    first->next = list->first;
-    list->first = first;
+    oldFirst->prev = list->first;
   }
 
   ++list->size;
@@ -183,22 +181,20 @@ Item dllistPopFront(DLList *const restrict list)
 void dllistPushBack(DLList *const restrict list,
                     const Item *const restrict item)
 {
+  struct Node *const oldLast = list->last;
   // TODO: Test against memory allocation failure!
-  struct Node *const last = (struct Node *const)malloc(sizeof(struct Node));
-  last->item = *item;
-  last->next = NULL;
+  list->last = (struct Node *const)malloc(sizeof(struct Node));
+  list->last->item = *item;
+  list->last->prev = oldLast;
+  list->last->next = NULL;
 
   if (list->size == 0)
   {
-    last->prev = NULL;
-    list->first = last;
-    list->last = last;
+    list->first = list->last;
   }
   else
   {
-    list->last->next = last;
-    last->prev = list->last;
-    list->last = last;
+    oldLast->next = list->last;
   }
 
   ++list->size;

@@ -116,20 +116,15 @@ int sllistSize(const SLList *const restrict list)
 void sllistPushFront(SLList *const restrict list,
                      const Item *const restrict item)
 {
-  struct Node *const first = (struct Node *const)malloc(sizeof(struct Node));
+  struct Node *const oldFirst = list->first;
   // TODO: Test against memory allocation failure!
-  first->item = *item;
+  list->first = (struct Node *const)malloc(sizeof(struct Node));
+  list->first->item = *item;
+  list->first->next = oldFirst;
 
   if (list->size == 0)
   {
-    first->next = NULL;
-    list->first = first;
-    list->last = first;
-  }
-  else
-  {
-    first->next = list->first;
-    list->first = first;
+    list->last = list->first;
   }
 
   ++list->size;
@@ -161,20 +156,19 @@ Item sllistPopFront(SLList *const restrict list)
 void sllistPushBack(SLList *const restrict list,
                     const Item *const restrict item)
 {
-  struct Node *const last = (struct Node *const)malloc(sizeof(struct Node));
+  struct Node *const oldLast = list->last;
   // TODO: Test against memory allocation failure!
-  last->item = *item;
-  last->next = NULL;
+  list->last = (struct Node *const)malloc(sizeof(struct Node));
+  list->last->item = *item;
+  list->last->next = NULL;
 
   if (list->size == 0)
   {
-    list->first = last;
-    list->last = last;
+    list->first = list->last;
   }
   else
   {
-    list->last->next = last;
-    list->last = last;
+    oldLast->next = list->last;
   }
 
   ++list->size;
