@@ -1,5 +1,6 @@
-#include "../headers/sllisttest.h"
 #include "../headers/dllisttest.h"
+#include "../headers/sllisttest.h"
+#include "../headers/stacktest.h"
 #include <stdio.h>
 
 int main(void)
@@ -7,10 +8,11 @@ int main(void)
   void (*testCases[])(void) =
   {
     runSllistTestCase,
-    runDllistTestCase
+    runDllistTestCase,
+    runStackTestCase
   };
 
-  const int arraySize = 2;
+  const int arraySize = 3;
   int testCaseCounter = 0;
 
   for (int i = 0; i < arraySize; ++i)
