@@ -126,7 +126,10 @@ Item stackPop(Stack *const restrict stack)
   assert(stack->size > 0);
 
   const Item item = stack->first->item;
+  struct Node *oldFirst = stack->first;
   stack->first = stack->first->next;
+  free(oldFirst);
+
   --(stack->size);
   ++(stack->operationCounter);
   return item;
