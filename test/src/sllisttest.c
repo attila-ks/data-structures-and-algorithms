@@ -344,6 +344,7 @@ void testSllistPopFront(void)
   sllistDestruct(&list);
 }
 
+
 void testSllistPushBack(void)
 {
   // Test func sllistPushBack with empty SLList
@@ -389,6 +390,7 @@ void testSllistPushBack(void)
 
   sllistDestruct(&list);
 }
+
 
 void testSllistRemoveIf(void)
 {
