@@ -1,4 +1,5 @@
 #include "../headers/dllisttest.h"
+#include "../headers/queuetest.h"
 #include "../headers/sllisttest.h"
 #include "../headers/stacktest.h"
 #include <stdio.h>
@@ -9,10 +10,11 @@ int main(void)
   {
     runSllistTestCase,
     runDllistTestCase,
-    runStackTestCase
+    runStackTestCase,
+    runQueueTestCase
   };
 
-  const int arraySize = 3;
+  const int arraySize = 4;
   int testCaseCounter = 0;
 
   for (int i = 0; i < arraySize; ++i)
