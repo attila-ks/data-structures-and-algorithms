@@ -407,7 +407,7 @@ void testDllistPushBack(void)
 
   dllistDestruct(&list);
 
-  // Test func dllistPushBack with one-Items DLList
+  // Test func dllistPushBack with one-Item DLList
   list = dllistConstruct(1, 0);
   dllistPushBack(&list, &((Item){1}));
   assert

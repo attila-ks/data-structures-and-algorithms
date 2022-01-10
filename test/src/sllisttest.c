@@ -359,7 +359,7 @@ void testSllistPushBack(void)
     list.operationCounter == 1
   );
 
-  // Test func sllistPushBack with one-Items SLList
+  // Test func sllistPushBack with one-Item SLList
   list = sllistConstruct(1, 0);
   sllistPushBack(&list, &((Item){1}));
   assert
