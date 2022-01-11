@@ -14,7 +14,7 @@ SLList sllistConstruct(int n, ...)
 
   for (int i = 0; i < n; ++i)
   {
-    Item item = va_arg(initList, Item);
+    const Item item = va_arg(initList, Item);
     sllistPushBack(&list, &item);
   }
 
