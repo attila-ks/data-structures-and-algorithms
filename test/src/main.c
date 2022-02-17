@@ -3,6 +3,7 @@
 #include "../headers/queuetest.h"
 #include "../headers/sllisttest.h"
 #include "../headers/stacktest.h"
+#include "../headers/stequetest.h"
 #include <stdio.h>
 
 int main(void)
@@ -13,10 +14,11 @@ int main(void)
     runDllistTestCase,
     runStackTestCase,
     runQueueTestCase,
-    runBagTestCase
+    runBagTestCase,
+    runStequeTestCase
   };
 
-  const int arraySize = 5;
+  const int arraySize = 6;
   int testCaseCounter = 0;
 
   for (int i = 0; i < arraySize; ++i)
