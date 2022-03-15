@@ -1,4 +1,5 @@
 #include "../headers/bagtest.h"
+#include "../headers/dequetest.h"
 #include "../headers/dllisttest.h"
 #include "../headers/queuetest.h"
 #include "../headers/sllisttest.h"
@@ -15,10 +16,11 @@ int main(void)
     runStackTestCase,
     runQueueTestCase,
     runBagTestCase,
-    runStequeTestCase
+    runStequeTestCase,
+    runDequeTestCase
   };
 
-  const int arraySize = 6;
+  const int arraySize = 7;
   int testCaseCounter = 0;
 
   for (int i = 0; i < arraySize; ++i)
